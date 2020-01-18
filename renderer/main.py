@@ -129,17 +129,17 @@ class MainRenderer:
                 overview = self.data.overview
 
                 # Use This code if you want the goal animation to run only for your fav team's goal
-                # if self.data.fav_team_id == overview['home_team_id']:
-                #     if overview['home_score'] > home_score:
-                #         self._draw_goal()
-                # else:
-                #     if overview['away_score'] > away_score:
-                #         self._draw_goal()
+                if self.data.fav_team_id == overview['home_team_id']:
+                    if overview['home_score'] > home_score:
+                        self._draw_goal()
+                else:
+                    if overview['away_score'] > away_score:
+                        self._draw_goal()
 
                 # Use this code if you want the goal animation to run for both team's goal.
                 # Run the goal animation if there is a goal.
-                if overview['home_score'] > home_score or overview['away_score'] > away_score:
-                   self._draw_goal()
+                #if overview['home_score'] > home_score or overview['away_score'] > away_score:
+                #   self._draw_goal()
 
                 # Prepare the data
                 score = '{}-{}'.format(overview['away_score'], overview['home_score'])
